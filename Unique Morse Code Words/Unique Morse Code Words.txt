@@ -1,0 +1,23 @@
+Unique Morse Code Words
+
+
+
+class Solution {
+public:
+    int uniqueMorseRepresentations(vector<string>& words) {
+        unordered_set<string> object;
+        string str[]={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        
+        for(auto i:words){
+            string s="";
+            for(auto j:i){
+            
+              s+=str[j-97] ;     
+                
+            }
+            object.insert(s);
+        }
+        return object.size();
+        
+    }
+};
