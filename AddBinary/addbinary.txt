@@ -1,0 +1,23 @@
+class Solution {
+public:
+    string addBinary(string x, string y) {
+        
+        string r;
+        int i= x.size()-1, j=y.size()-1;
+        int s,carry=0;
+        
+        while(i>=0 || j>=0)
+        {
+            s=carry;
+            if(i>=0) s +=x[i--]-'0';
+            if(j>=0) s +=y[j--]-'0';
+            
+            r +=to_string(s%2);
+            carry=s/2;
+        }        
+        
+        if(carry !=0) r+='1';
+        reverse(r.begin(),r.end());
+        return r;
+    }
+};
